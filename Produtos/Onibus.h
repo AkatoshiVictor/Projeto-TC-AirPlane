@@ -3,8 +3,13 @@
 
 class Onibus:public Produto{
     private:
-        int TaxaEconomica_Onibus=2;
-        int TaxaExecutiva_Onibus=3;
+
+        int TaxaEconomica_Onibus = 2;
+        int TaxaExecutiva_Onibus = 3;
+
+        bool seguro;
+        string bagagem;
+        int poltrona; //Escrita em arquivo
 
         int Distancia_Onibus;
 
@@ -33,7 +38,6 @@ class Onibus:public Produto{
         void Calcula_PrecoDaPassagemOnibus(int);
 
         void ImprimirPassagemOnibus();
-
 
 };
 

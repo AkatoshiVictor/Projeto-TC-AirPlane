@@ -2,6 +2,7 @@
 
 Onibus::Onibus(string Data_de_ida, string Data_de_volta, int TipoDeViagem, int origem, int destino, int escolha)
     :Produto(Data_de_ida, Data_de_volta, TipoDeViagem, origem, destino){
+
     Define_Distancia_Onibus(origem, destino);
     Calcula_TempoDeViagemOnibus();
     Calcula_PrecoDaPassagemOnibus(escolha);

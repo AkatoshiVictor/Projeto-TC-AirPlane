@@ -76,13 +76,13 @@ int main(){
                                                     cout << endl << "EXECUTE O MÉTODO DE ALTERAÇÃO DE TAXAS MARÍTIMAS" << endl;
                                                     system("pause");
                                                 }
-                                                break;      
+                                                break;
                                             }
                                              if(Escolhas == 99){
                                                 Escolhas = 0;
                                                 break;
                                             }
-                                        }           
+                                        }
                                     }
                                     break;
                                     case 2:{
@@ -96,17 +96,17 @@ int main(){
                                             Escolhas = Agencia.FuncionarioPresidenteRegistroDePassagens();
                                             switch(Escolhas){
                                                 case 0:{
-                                                    cout << endl << "EXCUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE ÔNIBUS" << endl;
+                                                    cout << endl << "EXECUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE ÔNIBUS" << endl;
                                                     system("pause");
                                                 }
                                                 break;
                                                 case 1:{
-                                                    cout << endl << "EXCUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE AVIÃO" << endl;
+                                                    cout << endl << "EXECUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE AVIÃO" << endl;
                                                     system("pause");
                                                 }
                                                 break;
                                                 case 2:{
-                                                    cout << endl << "EXCUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE CRUZEIRO" << endl;
+                                                    cout << endl << "EXECUTE O MÉTODO DE EXIBIÇÃO DE VEBDA DAS PASSAGENS DE CRUZEIRO" << endl;
                                                     system("pause");
                                                 }
                                                 break;
@@ -139,7 +139,7 @@ int main(){
                         }
                         break;
                     }
-                    
+
                     if(Escolhas == 99){
                         Escolhas = 0;
                         system("pause");
@@ -162,6 +162,6 @@ int main(){
             break;
         }
     }
-    
+
     return 0;
 }

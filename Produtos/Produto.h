@@ -3,7 +3,7 @@
 
 class Produto{
     private:
-        string Tipo_de_viagem;
+        string Tipo_de_viagem; //colocar pra agencia
         string Data_de_ida;
         string Data_de_volta;
         string Origem;

@@ -3,6 +3,7 @@
 
 class Aviao:public Produto{
     private:
+
         int TaxaEconomica_Aviao;
         int TaxaExecutiva_Aviao;
         int TaxaPrimeiraClasse_Aviao;
@@ -32,7 +33,6 @@ class Aviao:public Produto{
 
         void Calcula_TempoDeViagemAviao();
         void Calcula_PrecoDaPassagemAviao(int);
-
 
 };
 
