@@ -29,7 +29,7 @@ void Onibus::Define_Distancia_Onibus(int a, int b){
     }
 }
 
-int Onibus::Retorna_Distancia_onibus(){
+int Onibus::Retorna_Distancia_Onibus(){
     return Distancia_Onibus;
 }
 

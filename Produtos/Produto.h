@@ -14,6 +14,12 @@ class Produto{
 
         string TagPassagem;
 
+        string const Regiao_Norte [7] = {"BELÉM", "BOA VISTA", "MACAPÁ", "MANAUS", "PALMAS", "PORTO VELHO", "RIO BRANCO"};
+        string const Regiao_Nordeste [9] = {"ARACAJU","FORTALEZA", "JOÃO PESSOA", "MACEIÓ", "NATAL","RECIFE", "SALVADOR", "SÃO LUÍS", "TERESINA"};
+        string const Regiao_CentroOeste [4] = {"BRASÍLIA", "CUIABÁ", "CAMPO GRANDE", "GOIÂNIA"};
+        string const Regiao_Sudeste [4] = {"BELO HORIZONTE", "RIO DE JANEIRO", "SÃO PAULO", "VITÓRIA"};
+        string const Regiao_Sul [3] = {"CURITIBA", "FLORIANÓPOLIS", "PORTO ALEGRE"};
+
     public:
         Produto(string, string, int, int, int);
 
@@ -41,9 +47,6 @@ class Produto{
         string Retorna_TagPassagem();
 
         void ImprimirDadosDaViagem();
-
-
-
 
 };
 

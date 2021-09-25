@@ -32,7 +32,7 @@ class Onibus:public Produto{
         Onibus(string, string, int, int, int, int);//, int, int);
 
         void Define_Distancia_Onibus(int, int);
-        int Retorna_Distancia_onibus();
+        int Retorna_Distancia_Onibus();
 
         void Calcula_TempoDeViagemOnibus();
         void Calcula_PrecoDaPassagemOnibus(int);
