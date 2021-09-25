@@ -32,7 +32,7 @@ int const Menus::ExibidorDeMenus(){
 
         textcolor(4,0);
         for(int i=0; i<MensagemAmigavel.size(); i++){
-            cout << "   " << MensagemAmigavel[i] << endl;
+            cout << MensagemAmigavel[i] << endl;
         }
         cout << endl;
         textcolor(15,0);
@@ -40,12 +40,12 @@ int const Menus::ExibidorDeMenus(){
         for(int I=0; I<Exibidor.size(); I++){
             if(I == PosicaoMenu){
                 textcolor(2,0); /*2 = Ciano*/
-                cout << "   " << Exibidor[I] << endl;
-                cout << "       [ <- Voltar || -> Entrar ]" << endl;
+                cout << Exibidor[I] << endl;
+                cout << "  [ <- Voltar || -> Escolher ]" << endl;
             }
             else{
                 textcolor(15,0); /*Voltando a cor original*/
-                cout << "   " << Exibidor[I] << endl;
+                cout << Exibidor[I] << endl;
             }
 
         }
@@ -102,7 +102,7 @@ int const Menus::Funcionario(){
     string Menu[3] = {"ENTRAR COMO PRESIDENTE", "ENTRAR COMO GERENTE", "ENTRAR COMO FUNCIONÁRIO"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("MENU DE FUNCIONÁRIO ");
+    MensagemAmigavel.push_back("BEM VINDO A EMRPRESA DE VIAGENS AIRPLANE ");
     MensagemAmigavel.push_back("POR FAVOR ESCOLHA A BAIXO O CARGO COM O QUAL QUER ENTRAR NO SISTEMA");
 
     Exibidor.clear();
@@ -134,8 +134,7 @@ int const Menus::FuncionarioPresidenteAlteracaoDeTaxas(){
     "ALTERÇÃO DE TAXA TERRESTR - ECONÔMICA", "ALTERÇÃO DE TAXA TERRESTR - EXECUTIVA","ALTERÇÃO DE TAXA MARÍTIMA"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("AGÊNCIA DE VIAGENS AIRPLANE");
-    MensagemAmigavel.push_back("BEM VINDO, PRESIDENTE");
+    MensagemAmigavel.push_back("ALTERAÇÃO DE TAXAS DE VIAGENS, POR FAVOR ESOLHA A TAXA QUE DESEJA ALTERAR");
 
     Exibidor.clear();
     for(int I=0; I<6; I++){
@@ -150,8 +149,7 @@ int const Menus::FuncionarioPresidenteRegistroDePassagens(){
     string Menu[3] = {"VENDAS DE PASSAGENS DE ÔNIBUS", "VENDAS DE PASSAGENS DE AVIÃO", "VENDA DE PASSAGENS DE CRUZEIRO"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("AGÊNCIA DE VIAGENS AIRPLANE");
-    MensagemAmigavel.push_back("BEM VINDO, PRESIDENTE");
+    MensagemAmigavel.push_back("VERIFICAÇÃO DE PASSAGENS VENDIDAS");
 
     Exibidor.clear();
     for(int I=0; I<3; I++){
@@ -161,10 +159,26 @@ int const Menus::FuncionarioPresidenteRegistroDePassagens(){
     return ExibidorDeMenus();
 
 }
+/*Menu responsável pela interação do funcionário gerente*/
+int const Menus::FuncionarioGerente(){
+    string Menu[5] = {"DESPEDIR FUNCIONÁRIO","CADASTRAR NOVO FUNCIONÁRIO","VERIFICAR RELÁTORIO DE VENDAS DA REGIÃO","MEUS DADOS","EDITAR MEUS DADOS"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("BEM VINDO, GERENTE");
+
+    Exibidor.clear();
+    for(int I=0; I<5; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
 /*Menu do Funcionário*/
 int const Menus::FuncionarioFuncionario(){
-    string Menu[3] = {"VENDER PASSAGENS","VER SEUS DADOS","EDITAR SEUS DADOS"};
+    string Menu[3] = {"VENDER PASSAGENS","MEUS DADOS","EDITAR MEUS DADOS"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("BEM VINDO, VENDEDOR");
 
     Exibidor.clear();
     for(int I=0; I<3; I++){
@@ -175,8 +189,11 @@ int const Menus::FuncionarioFuncionario(){
 }
 
 /*Menu de venda de passagens*/
-inst const Menus::FuncionarioFuncionarioVenderPassagens(){
+int const Menus::FuncionarioFuncionarioVenderPassagens(){
     string Menu[3] = {"PASSAGENS DE AVIÃO","PASSAGENS DE ONIBUS","PASSAGENS DE CRUZEIRO"};
+    
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("ESCOLHA A PASSAGEM QUE DESEJA VENDER");
 
     Exibidor.clear();
     for(int I=0; I<3; I++){
@@ -185,13 +202,15 @@ inst const Menus::FuncionarioFuncionarioVenderPassagens(){
 
     return ExibidorDeMenus();
 }
-
-/*Menu do Gerente*/
-int const Menus::FuncionarioGerente(){
-    string Menu[3] = {"DESPEDIR FUNCIONÁRIO","VER SEUS DADOS","EDITAR SEUS DADOS"};
+/*Menu responsável pela alteração de dados de funionários (Gerentes e vendedores)*/
+int const Menus::FuncionarioAlteracaoDados(){
+    string Menu[8] = {"EMAIL","SENHA","NOME COMPLETO","DATA DE NASCIMENTO", "ENDEREÇO","TELEFONE","TELEFONE FAMILIAR","DOCUMENTO"};
+;
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("BEM VINDO, AQUI VOCÊ PODE ALTERAR SEUS DADOS!");
 
     Exibidor.clear();
-    for(int I=0; I<3; I++){
+    for(int I=0; I<8; I++){
         Exibidor.push_back(Menu[I]);
     }
 
@@ -207,7 +226,7 @@ int const Menus::Cliente(){
     string Menu[2] = {"ENTRAR", "CADASTRE-SE"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("MENU DE CLIENTE");
+    MensagemAmigavel.push_back("CLIENTE AIRPLANE");
 
     Exibidor.clear();
     for(int I=0; I<2; I++){
@@ -219,25 +238,13 @@ int const Menus::Cliente(){
 
 /*Menu para entrar no menu geral do usuário*/
 int const Menus::ClienteEntrar(){
-    string Menu[5] = {"COMPRAR PASSAGENS", "VER HÓTEIS", "VER PONTOS TURÍSTICOS", "EDITAR COMPRAS", "EDITAR PERFIL"};
+    string Menu[4] = {"COMPRAR PASSAGENS", "VER HÓTEIS", "CANCELAR PASSAGENS", "EDITAR PERFIL"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("MENU DE CLIENTE - PERFIL");
+    MensagemAmigavel.push_back("BEM VINDO, SENHOR CLIENTE! O QUE DESEJA FAZER HOJE?");
 
     Exibidor.clear();
-    for(int I=0; I<5; I++){
-        Exibidor.push_back(Menu[I]);
-    }
-
-    return ExibidorDeMenus();
-}
-
-/*Menu para o Usuário criar um cadastro*/
-int const Menus::ClienteCriarCadastro(){
-    string Menu[1] = {"MÉTODOS PARA CRIAR CADASTRO"};
-
-    Exibidor.clear();
-    for(int I=0; I<1; I++){
+    for(int I=0; I<4; I++){
         Exibidor.push_back(Menu[I]);
     }
 
@@ -249,7 +256,7 @@ int const Menus::ClienteComprarPassagens(){
     string Menu[3] = {"PASSAGENS DE AVIÃO","PASSAGENS DE ÔNIBUS","PASSAGENS DE CRUZEIRO"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("MENU DE CLIENTE - PERFIL");
+    MensagemAmigavel.push_back("QUAL O TIPO DE PASSAGEM O SENHOR DESEJA COMPRAR?");
 
     Exibidor.clear();
     for(int I=0;I<3;I++){
@@ -264,7 +271,7 @@ int const Menus::ClientePassagensRegioes(){
     string Menu[5] = {"CENTRO-OESTE","NORDESTE","NORTE","SUDESTE","SUL"};
 
     MensagemAmigavel.clear();
-    MensagemAmigavel.push_back("MENU DE CLIENTE - PERFIL");
+    MensagemAmigavel.push_back("REGIÕES DISPONÍVEIS");
 
     Exibidor.clear();
     for(int I=0; I<5; I++){
@@ -278,6 +285,9 @@ int const Menus::ClientePassagensRegioes(){
 int const Menus::ClientePassagensNordeste(){
     string Menu[9] = {"ARACAJU","FORTALEZA","JOÃO PESSOA","MACEIÓ","NATAL","RECIFE","SALVADOR","SÃO LUÍS","TERESINA"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
+
     Exibidor.clear();
     for(int I=0; I<9; I++){
         Exibidor.push_back(Menu[I]);
@@ -288,6 +298,9 @@ int const Menus::ClientePassagensNordeste(){
 
 int const Menus::ClientePassagensNorte(){
     string Menu[7] = {"BELÉM","BOA VISTA","MACAPÁ","MANAUS","PALMAS","PORTO VELHO","RIO BRANCO"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
 
     Exibidor.clear();
     for(int I=0; I<5; I++){
@@ -300,6 +313,9 @@ int const Menus::ClientePassagensNorte(){
 int const Menus::ClientePassagensSudeste(){
     string Menu[4] = {"BELO HORIZONTE","RIO DE JANEIRO","SÃO PAULO","VITÓRIA"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
+
     Exibidor.clear();
     for(int I=0; I<4; I++){
         Exibidor.push_back(Menu[I]);
@@ -311,6 +327,9 @@ int const Menus::ClientePassagensSudeste(){
 int const Menus::ClientePassagensSul(){
     string Menu[3] = {"CURITIBA","FLORIANÓPOLIS","PORTO ALEGRE"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
+
     Exibidor.clear();
     for(int I=0; I<3; I++){
         Exibidor.push_back(Menu[I]);
@@ -321,6 +340,9 @@ int const Menus::ClientePassagensSul(){
 
 int const Menus::ClientePassagensCentroOeste(){
     string Menu[4] = {"BRASÍLIA","CUIABÁ","CAMPO GRANDE","GOIÂNIA"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
 
     Exibidor.clear();
     for(int I=0; I<4; I++){
@@ -334,6 +356,9 @@ int const Menus::ClientePassagensCentroOeste(){
 int const Menus::ClientePassagensCruzeiro(){
     string Menu[2] = {"SALVADOR -> EUROPA","SALVADOR -> CARIBE"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("CIDADES DISPONÍVEIS");
+
     Exibidor.clear();
     for(int I=0; I<2; I++){
         Exibidor.push_back(Menu[I]);
@@ -343,7 +368,7 @@ int const Menus::ClientePassagensCruzeiro(){
 }
 
 /*Menu para edição de compras*/
-int const Menus::ClienteEditarCompras(){
+int const Menus::ClienteCompras(){
     string Menu[2] = {"VER COMPRAS","CANCELAR COMPRAS"};
 
     Exibidor.clear();
@@ -356,13 +381,101 @@ int const Menus::ClienteEditarCompras(){
 
 /*Menu para edição de cadastro*/
 int const Menus::ClienteEditarCadastro(){
-    string Menu[8] = {"MUDAR EMAIL","MUDAR SENHA","MUDAR NOME","MUDAR DATA","MUDAR ENDEREÇO","MUDAR TELEFONE","MUDAR TELEFONE FAMILIAR",
-    "MUDAR DOCUMENTO"};
+    string Menu[10] = {"EMAIL","SENHA","NOME COMPLETO","DATA DE NASCIMENTO", "ENDEREÇO","TELEFONE","TELEFONE FAMILIAR","DOCUMENTO","ORÇAMENTO","ACOMPANHANTE"};
+    
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("BEM VINDO, AQUI VOCÊ PODE ALTERAR SEUS DADOS!");
 
     Exibidor.clear();
-    for(int I=0; I<8; I++){
+    for(int I=0; I<10; I++){
         Exibidor.push_back(Menu[I]);
     }
 
     return ExibidorDeMenus();
 }
+/*Menu para criação de passageem de avião e de ônibus*/
+int const Menus::ClienteCriacaoDePassagem(){
+    string Menu[4] = {"ORIGEM","DESTINO","TIPO DA PASSAGEM", "TERMINOU DE MONTAR SUA PASSAGEM? CLIQUE AQUI PARA CONFIRMAR A SUA COMPRA"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("MONTE A SUA PASSAGEM");
+
+    Exibidor.clear();
+    for(int I=0; I<4; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+/*Menu para criação de taxa de passageem de avião*/
+int const Menus::ClienteEscolhaDeTaxaDeAviao(){
+    string Menu[3] = {"PASSAGEM ECONÔMICA", "PASSAGEM EXECUTIVA","PASSAGEM DE PRIMEIRA CLASSE",};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("ESCOLHA O NÍVEL DO SEU CONFORTO");
+
+    Exibidor.clear();
+    for(int I=0; I<3; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+int const Menus::ClienteEscolhaDeTaxaDeOnibus(){
+    string Menu[2] = {"PASSAGEM ECONÔMICA", "PASSAGEM EXECUTIVA"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("ESCOLHA O NÍVEL DO SEU CONFORTO");
+
+    Exibidor.clear();
+    for(int I=0; I<2; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+/*Menus para gerecnciamento da hospedaria*/
+
+int const Menus::HotelEscolha(){
+    string Menu[5] = {"5 ESTRELAS","4 ESTRELAS","3 ESTRELAS","2 ESTRELAS", "1 ESTRELA"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("BEM VINDO, AQUI VOCÊ PODE ESCOLHER OS SEUS HÓTEIS");
+
+    Exibidor.clear();
+    for(int I=0; I<5; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+/*Método para exibir as opções de origem*/
+int const Menus::ClienteOrigem(){
+    string Menu[5] = {"CENTRO-OESTE - BELO HORIZONTE","NORDESTE - JOÃO PESSOA","NORTE - MANAUS","SUDESTE - SÃO PAULO","SUL - FLORIANÓPOLIS "};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("REGIÕES DISPONÍVEIS");
+
+    Exibidor.clear();
+    for(int I=0; I<5; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+/*Método para personalizar a passagem de cruzeiro*/
+int const Menus::ClientePersonalizeSeuCruzeiro(){
+    string Menu[2] = {"PACOTE LUA DE MEL", "PACOTE FAMÍLIA"};
+
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("REGIÕES DISPONÍVEIS");
+
+    Exibidor.clear();
+    for(int I=0; I<2; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
+
+
