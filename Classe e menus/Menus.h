@@ -66,5 +66,7 @@ class Menus{
         int const ClienteEditarCadastro();                          /*Método que auxília a alteração de dados do cliente, em cada opção é executada
                                                                     um método da classe main que vai alterar a variável escolhida pelo usuário*/
 
+        int const ClienteInserindoData();
+
         int const HotelEscolha();                                   /*Método que auxília na escolha de hótel do cliente*/
 };

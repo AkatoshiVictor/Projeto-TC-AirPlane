@@ -442,6 +442,30 @@ int main(){
                                                             }
                                                             break;
                                                             case 3:{
+                                                                while(1){
+                                                                    Escolhas = Agencia.ClienteInserindoData();
+                                                                    switch(Escolhas){
+                                                                        case 0:{
+                                                                            cout << endl << "EXECUTE O MÉTODO QUE PEGA A DATA DE IDA (DIA MÊS ANO) SEPARADO POR ESPAÇO";
+                                                                            cout << endl << "APÓS ISSO EXECUTE O MÉTODO QUE VERIFICA SE A DATA É DISPONÍVEL" << endl << endl;
+                                                                            system("pause");
+                                                                        }
+                                                                        break;
+                                                                        case 1:{
+                                                                            cout << endl << "EXECUTE O MÉTODO QUE PEGA A DATA DE VOLTA (DIA MÊS ANO) SEPARADO POR ESPAÇO";
+                                                                            cout << endl << "APÓS ISSO EXECUTE O MÉTODO QUE VERIFICA SE A DATA É DISPONÍVEL" << endl << endl;
+                                                                            system("pause");
+                                                                        }
+                                                                        break;      
+                                                                    }
+                                                                    if(Escolhas == 99){
+                                                                        Escolhas = 0;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            }
+                                                            break;
+                                                            case 4:{
                                                                 cout << "EXECUTE O MÉTODO QUE EXIBE A PASSAGEM DE AVIÃO QUE FOI FEITA" << endl;
                                                                 cout << "EXECUTE O MÉTODO QUE CONFIRMA A PASSAGEM DO CLIENTE SE ELE APERTAR PARA DIREITA"
                                                                 << "E CANCELA SE ELE APERTAR PARA ESQUERDA" << endl;
@@ -566,6 +590,31 @@ int main(){
                                                             }
                                                             break;
                                                             case 3:{
+                                                                while(1){
+                                                                    Escolhas = Agencia.ClienteInserindoData();
+                                                                    switch(Escolhas){
+                                                                        case 0:{
+                                                                            cout << endl << "EXECUTE O MÉTODO QUE PEGA A DATA DE IDA (DIA MÊS ANO) SEPARADO POR ESPAÇO";
+                                                                            cout << endl << "APÓS ISSO EXECUTE O MÉTODO QUE VERIFICA SE A DATA É DISPONÍVEL" << endl << endl;
+                                                                            system("pause");
+                                                                        }
+                                                                        break;
+                                                                        case 1:{
+                                                                            cout << endl << "EXECUTE O MÉTODO QUE PEGA A DATA DE VOLTA (DIA MÊS ANO) SEPARADO POR ESPAÇO";
+                                                                            cout << endl << "APÓS ISSO EXECUTE O MÉTODO QUE VERIFICA SE A DATA É DISPONÍVEL" << endl << endl;
+                                                                            system("pause");
+                                                                        }
+                                                                        break;
+                                                                                 
+                                                                    }
+                                                                    if(Escolhas == 99){
+                                                                        Escolhas = 0;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            }
+                                                            break;
+                                                            case 4:{
                                                                 cout << "EXECUTE O MÉTODO QUE EXIBE A PASSAGEM DE ÔNIBUS QUE FOI FEITA" << endl;
                                                                 cout << "EXECUTE O MÉTODO QUE CONFIRMA A PASSAGEM DO CLIENTE SE ELE APERTAR PARA DIREITA"
                                                                 << "E CANCELA SE ELE APERTAR PARA ESQUERDA" << endl;

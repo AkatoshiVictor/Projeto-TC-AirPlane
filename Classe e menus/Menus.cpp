@@ -395,13 +395,13 @@ int const Menus::ClienteEditarCadastro(){
 }
 /*Menu para criação de passageem de avião e de ônibus*/
 int const Menus::ClienteCriacaoDePassagem(){
-    string Menu[4] = {"ORIGEM","DESTINO","TIPO DA PASSAGEM", "TERMINOU DE MONTAR SUA PASSAGEM? CLIQUE AQUI PARA CONFIRMAR A SUA COMPRA"};
+    string Menu[5] = {"ORIGEM","DESTINO","TIPO DA PASSAGEM", "DATAS DA PASSAGEM","TERMINOU DE MONTAR SUA PASSAGEM? CLIQUE AQUI PARA CONFIRMAR A SUA COMPRA"};
 
     MensagemAmigavel.clear();
     MensagemAmigavel.push_back("MONTE A SUA PASSAGEM");
 
     Exibidor.clear();
-    for(int I=0; I<4; I++){
+    for(int I=0; I<5; I++){
         Exibidor.push_back(Menu[I]);
     }
 
@@ -477,5 +477,27 @@ int const Menus::ClientePersonalizeSeuCruzeiro(){
 
     return ExibidorDeMenus();
 }
+/*Método para chamada de datas*/
+int const Menus::ClienteInserindoData(){
+    string Menu[2] = {"DATA DE IDA", "DATA DE VOLTA"};
 
+    MensagemAmigavel.clear();
+    MensagemAmigavel.push_back("SENHOR CLIENTE, POR FAVOR PRESTE BRASTANTE ATEÇÃO NAS SEGUINTES INSTRUÇÕES PARA QUANDO FOR INSERIR A SUA DATA:");
+    MensagemAmigavel.push_back("");
+    MensagemAmigavel.push_back("01 - INSIRA A DATA NO FORMATO (DIA MÊS ANO) SEPARADO POR ESPAÇOS");
+    MensagemAmigavel.push_back("02 - O DIA DEVE SER ESCRITO COM DOIS ALGARISMOS (POR EXEMPLO: 01, 08, 23)");
+    MensagemAmigavel.push_back("03 - O MÊS DEVE SER ESCRITO COM DOIS ALGARISMOS (POR EXEMPLO: 05, 06, 12)");
+    MensagemAmigavel.push_back("04 - O ANO DEVE SER ESCRITO COM QUATRO ALGARISMOS (POR EXEMPLO: 2021, 2022)");
+    MensagemAmigavel.push_back("05 - LEMBRE-SE DA NÃO INSERIR DATAS QUE JÁ PASSARAM, SE O FIZER, SERÁ ORIENTADO A INSERIR A DATA NOVAMENTE");
+    MensagemAmigavel.push_back("06 - NOSSA EMPRESA TRABALHA APENAS COM ANTECIPAÇÃO DE 2 ANOS");
+    MensagemAmigavel.push_back("");
+    MensagemAmigavel.push_back("OBRIGADO POR ESCOLHER A AIRPLANE PARA OS SEUS SERVIOS DE VIAGEM");
+
+    Exibidor.clear();
+    for(int I=0; I<2; I++){
+        Exibidor.push_back(Menu[I]);
+    }
+
+    return ExibidorDeMenus();
+}
 
