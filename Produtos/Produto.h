@@ -10,6 +10,8 @@ class Produto{
         string Destino;
         string TempoDaViagem;
 
+        string teste;
+
         float PrecoDaPassagem;
 
         string TagPassagem;
