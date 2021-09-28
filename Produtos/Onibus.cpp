@@ -35,8 +35,8 @@ int Onibus::Retorna_Distancia_Onibus(){
 
 void Onibus::Calcula_TempoDeViagemOnibus(){
     int horas, minutos;
-    horas=(Retorna_Distancia_onibus()/80);
-    minutos=(horas-(Retorna_Distancia_onibus()/80))*100;
+    horas=(Retorna_Distancia_Onibus()/80);
+    minutos=(horas-(Retorna_Distancia_Onibus()/80))*100;
 
     Define_TempoDeViagem(to_string(horas)+" hr(s) e "+to_string(minutos)+" min(s)");
 }
@@ -45,10 +45,10 @@ void Onibus::Calcula_PrecoDaPassagemOnibus(int escolha){
     float calc_do_preco;
     switch(escolha){
         case 0:{
-            calc_do_preco = TaxaEconomica_Onibus*Retorna_Distancia_onibus();
+            calc_do_preco = TaxaEconomica_Onibus*Retorna_Distancia_Onibus();
         }break;
         case 1:{
-            calc_do_preco = TaxaExecutiva_Onibus*Retorna_Distancia_onibus();
+            calc_do_preco = TaxaExecutiva_Onibus*Retorna_Distancia_Onibus();
         }break;
     }
     Define_PrecoDaPassagem(calc_do_preco);
@@ -56,7 +56,7 @@ void Onibus::Calcula_PrecoDaPassagemOnibus(int escolha){
 
 void Onibus::ImprimirPassagemOnibus(){
     ImprimirDadosDaViagem();
-    cout<<"\nDistância à ser percorrida: "<<Retorna_Distancia_onibus()
+    cout<<"\nDistância à ser percorrida: "<<Retorna_Distancia_Onibus()
         <<"\nDuração média da viagem: "<<Retorna_TempoDeViagem()
         <<"\nPreco da passagem: R$ "<<Retorna_PrecoDaPassagem();
 }

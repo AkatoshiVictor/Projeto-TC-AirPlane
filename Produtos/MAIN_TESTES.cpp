@@ -15,7 +15,7 @@ int main(){
 
     GeradorDePassagens ger;
 
-    setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, "Portuguese");
 
     int Tipo_de_viagem;
     string Data_de_ida;
