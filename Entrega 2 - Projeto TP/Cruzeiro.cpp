@@ -1,12 +1,16 @@
 #include "Cruzeiro.h"
 
-Cruzeiro::Cruzeiro(string Data_de_ida, string Data_de_volta, int TipoDeViagem, int origem, int destino, int Cabine, int PacoteLuaDeMel)
-    :Produto(Data_de_ida, Data_de_volta, TipoDeViagem, origem, destino){
+Cruzeiro::Cruzeiro(int dia_de_ida, int mes_de_ida, int ano_de_ida, int dia_de_volta, int mes_de_volta,
+                 int ano_de_volta, int TipoDeViagem, int origem, int destino, int turno, int Cabine, int PacoteLuaDeMel)
+    :Produto(dia_de_ida, mes_de_ida, ano_de_ida, dia_de_volta, mes_de_volta,
+            ano_de_volta, TipoDeViagem, origem, destino, turno){
 
     this->Cabine=Cabine;
     this->PacoteLuaDeMel=PacoteLuaDeMel;
 
 }
+
+
 
 void Cruzeiro::set_Cabine(int Cabine){
     this->Cabine=Cabine;
@@ -74,4 +78,7 @@ void Cruzeiro::Calcula_PrecoDaPassagemCruzeio(int escolha){
     Define_PrecoDaPassagem(calc_do_preco);
 }
 
+void Cruzeiro::ImprimePassagemCruzeiro(){
+    ImprimePassagemCruzeiro();
+}
 

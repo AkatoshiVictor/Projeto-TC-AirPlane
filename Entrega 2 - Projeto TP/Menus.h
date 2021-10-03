@@ -1,5 +1,5 @@
 class Menus{
-    
+
     /*A QUANTIDADE DE COMENTÁRIOS NESSA VERSÃO DO PROJETO, SE DA PELO FARO DE QUE O PROGRAMA FOI CRIADO POR 4 PESSOAS
     E TUDO QUE FOI FEITO, DEVERIA SER EXPLICADO COM DETALHES, PARA AUXILIAR QUEM FOSSE UTILIZAR CADA CLASSE
     ABAIXO VOCÊ ENCONTRA COMO CADA MÉTODO FUNCIONA E ONDE ELE É EXECUTADO NA MAIN. FACILITANDO ASSIM TODAS AS POSSÍVEIS
@@ -19,7 +19,7 @@ class Menus{
         int const Funcionario();                                    /*Método para executar as opções de entrada do funcionário*/
         /*Cargos de fcunionários*/
         int const FuncionarioPresidente();                          /*Método para executar o menu com as opções do presidente*/
-        int const FuncionarioPresidenteAlteracaoDeTaxas();          /*Método para executar o menu com as açterações de taxas*/
+
         int const FuncionarioPresidenteRegistroDePassagens();       /*Método para executar o menu com os métodos de impressão
                                                                     do registro de passagens*/
 
@@ -48,7 +48,7 @@ class Menus{
 
         int const ClienteOrigem();                                  /*Método para exibir as opções de origem para avião e ônibus*/
 
-        int const ClientePassagensRegioes();                        /*Métodos para exibir as regioões disponíveis para escolha em ordem alfabética 
+        int const ClientePassagensRegioes();                        /*Métodos para exibir as regioões disponíveis para escolha em ordem alfabética
                                                                     (usado apenas para ônibus e abviões)*/
 
         int const ClientePassagensNorte();                          /*Ambos os métodos desse grupo servem para exibir as cidades em ordem alfabética
@@ -61,12 +61,9 @@ class Menus{
         int const ClientePassagensCruzeiro();                       /*Método usado para criação da passagem de cruzeiro, ele é usado em conjunto
                                                                     com os métodos da classe agência para montar uma passagem de cruzeiro*/
         int const ClientePersonalizeSeuCruzeiro();                  /*Método para exibir as eecolhas de personalização de passagens para cruzeiro*/
-        
-        int const ClienteCompras();                                 /*Método que exibe todas as comprar do cliente que entrou no sistema*/
+
         int const ClienteEditarCadastro();                          /*Método que auxília a alteração de dados do cliente, em cada opção é executada
                                                                     um método da classe main que vai alterar a variável escolhida pelo usuário*/
 
-        int const ClienteInserindoData();
-
-        int const HotelEscolha();                                   /*Método que auxília na escolha de hótel do cliente*/
+        int const ClienteInserindoData();                           /*Método que exibi as opções de datas para o cliente poder montar a passagem*/                     
 };

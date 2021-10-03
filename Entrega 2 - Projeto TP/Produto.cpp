@@ -2,40 +2,85 @@
 #include <string>
 #include <iomanip>
 
-Produto::Produto(string Data_de_ida, string Data_de_volta, int TipoDeViagem, int origem, int destino){
+Produto::Produto(){
+
+}
+
+Produto::Produto(int dia_de_ida, int mes_de_ida, int ano_de_ida, int dia_de_volta, int mes_de_volta,
+                 int ano_de_volta, int TipoDeViagem, int origem, int destino, int turno){
         Escolha_Tipo_de_viagem(TipoDeViagem);
-        this->Data_de_ida=Data_de_ida;
-        this->Data_de_volta=Data_de_volta;
+        Embarque.Dia_de_ida=dia_de_ida;
+        Embarque.Mes_de_ida=mes_de_ida;
+        Embarque.Ano_de_ida=ano_de_ida;
+        Retorno.Dia_de_volta=dia_de_volta;
+        Retorno.Mes_de_volta=mes_de_volta;
+        Retorno.Ano_de_volta=ano_de_volta;
         Escolha_Origem(origem);
         Escolha_Destino(destino);
+        set_Horario(turno);
 }
 
-void Produto::set_Data_de_ida(string Data_de_ida){
-    this->Data_de_ida=Data_de_ida;
+void Produto::set_dia_de_ida(int dia_de_ida){
+    Embarque.Dia_de_ida=dia_de_ida;
 }
 
-void Produto::set_Data_de_volta(string Data_de_volta){
-    this->Data_de_volta=Data_de_volta;
+void Produto::set_mes_de_ida(int mes_de_ida){
+    Embarque.Mes_de_ida=mes_de_ida;
 }
 
-string Produto::get_Data_de_ida(){
-    return Data_de_ida;
+void Produto::set_ano_de_ida(int ano_de_ida){
+    Embarque.Ano_de_ida=ano_de_ida;
 }
 
-string Produto::get_Data_de_volta(){
-    return Data_de_volta;
+void Produto::set_dia_de_volta(int dia_de_volta){
+    Retorno.Dia_de_volta=dia_de_volta;
+}
+
+void Produto::set_mes_de_volta(int mes_de_volta){
+    Retorno.Mes_de_volta=mes_de_volta;
+}
+
+void Produto::set_ano_de_volta(int ano_de_volta){
+    Retorno.Ano_de_volta=ano_de_volta;
+}
+
+int Produto::get_dia_de_ida(){
+    return Embarque.Dia_de_ida;
+}
+
+int Produto::get_mes_de_ida(){
+    return Embarque.Mes_de_ida;
+}
+
+int Produto::get_ano_de_ida(){
+    return Embarque.Ano_de_ida;
+}
+
+int Produto::get_dia_de_volta(){
+    return Retorno.Dia_de_volta;
+}
+
+int Produto::get_mes_de_volta(){
+    return Retorno.Mes_de_volta;
+}
+
+int Produto::get_ano_de_volta(){
+    return Retorno.Ano_de_volta;
 }
 
 void Produto::Escolha_Tipo_de_viagem(int a){
     switch(a){
         case 0:{
-            Tipo_de_viagem="Ônibus";
+            Tipo_de_viagem="Avião";
+            TagPassagem="A";
         }break;
         case 1:{
-            Tipo_de_viagem="Avião";
+            Tipo_de_viagem="Ônibus";
+            TagPassagem="O";
         }break;
         case 2:{
             Tipo_de_viagem="Cruzeiro";
+            TagPassagem="C";
         }break;
     }
 }
@@ -52,16 +97,17 @@ void Produto::Escolha_Origem(int b){
                 Origem="Brasília";
             }break;
             case 1:{
-                Origem="Florianópolis";
+                Origem="João Pessoa";
+
             }break;
             case 2:{
-                Origem="João Pessoa";
+                 Origem="Manaus";
             }break;
             case 3:{
-                Origem="Manaus";
+                 Origem="São Paulo";
             }break;
             case 4:{
-                Origem="São Paulo";
+                 Origem="Florianópolis";
             }break;
         }
     }else{
@@ -111,7 +157,7 @@ void Produto::Define_TagPassagem(){
     char vetor[8];
     char i;
 
-    for(i=0; i<4; i++){
+    for(i=0; i<3; i++){
         vetor[i]= 'a' + (char)(rand()%26);
         TagPassagem=TagPassagem+vetor[i];
     }
@@ -126,13 +172,41 @@ string Produto::Retorna_TagPassagem(){
     return TagPassagem;
 }
 
+void Produto::set_Horario(int turno){
+
+    switch(turno){
+        case 0:{
+            Horario = 10;
+        }
+        break;
+
+        case 1:{
+            Horario = 15;
+        }
+        break;
+
+        case 2:{
+            Horario = 21;
+        }
+        break;
+    }
+
+}
+
+int Produto::get_Horario(){
+    return Horario;
+}
+
 void Produto::ImprimirDadosDaViagem(){
     Define_TagPassagem();
     cout<<"---------------------------------------------------------------"
         <<"\nPassagem de "<<Retorna_Tipo_de_viagem()
         <<"\nRegistro: "<<Retorna_TagPassagem()
-        <<"\nData de Embarque: "<<get_Data_de_ida()
-        <<"\nData de volta: "<<get_Data_de_volta()
+        <<"\nData de Embarque: "<<get_dia_de_ida()<<"/"
+        <<get_mes_de_ida()<<"/"<<get_ano_de_ida()
+        <<"\nData de volta: "<<get_dia_de_volta()<<"/"
+        <<get_mes_de_volta()<<"/"<<get_ano_de_volta()
+        <<"\nHorário de partida: "<<get_Horario()<<"Hrs"
         <<"\nOrigem: "<<Retorna_Origem()
         <<"\nDestino: "<<Retorna_Destino();
 }

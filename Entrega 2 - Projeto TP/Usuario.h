@@ -4,7 +4,7 @@
 class Usuario{
 
 private:
-    string email;
+    string email; //Tida como o registro para o funcionário, já que cada e-mail é único.
     string senha;
 
     string nome_completo;
@@ -13,7 +13,7 @@ private:
     string telefone;
     string telefone_familiar;
     string documento;
-    string classe_do_funcionario;
+    int classe_do_funcionario;
 
     float orcamento;
     string acompanhante;
@@ -24,7 +24,7 @@ private:
 public:
 
     Usuario ();
-    Usuario(string, string, string, string, string, string, string, string, string, float, string, float, float);
+    Usuario(string, string, string, string, string, string, string, string, int, float, string, float, float);
 
     void set_email(string);
     void set_senha(string);
@@ -35,7 +35,7 @@ public:
     void set_telefone(string);
     void set_telefone_familiar(string);
     void set_documento(string);
-    void set_classe_do_funcionario(string);
+    void set_classe_do_funcionario(int);
     void set_orcamento(float);
     void set_acompanhante(string);
     void set_gastos_totais(float);
@@ -50,7 +50,7 @@ public:
     string get_telefone() const;
     string get_telefone_familiar() const;
     string get_documento() const;
-    string get_classe_do_funcionario() const;
+    int get_classe_do_funcionario() const;
     float get_orcamento() const;
     string get_acompanhante() const;
     float get_gastos_totais() const;

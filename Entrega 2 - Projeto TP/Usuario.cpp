@@ -6,7 +6,7 @@ Usuario::Usuario(){
 
 Usuario::Usuario(string email, string senha, string nome_completo, string data_nascimento,
                  string endereco, string telefone, string telefone_familiar, string documento,
-                 string classe_do_funcionario, float orcamento, string acompanhante, float gastos_totais
+                 int classe_do_funcionario, float orcamento, string acompanhante, float gastos_totais
                  , float salario){
 
     this-> email = email;
@@ -67,7 +67,7 @@ void Usuario::set_documento(string documento){
     this-> documento = documento;
 }
 
-void Usuario::set_classe_do_funcionario(string classe_do_funcionario){
+void Usuario::set_classe_do_funcionario(int classe_do_funcionario){
 
     this-> classe_do_funcionario = classe_do_funcionario;
 }
@@ -133,7 +133,7 @@ string Usuario::get_documento() const{
    return documento;
 }
 
-string Usuario::get_classe_do_funcionario() const{
+int Usuario::get_classe_do_funcionario() const{
 
     return classe_do_funcionario;
 }

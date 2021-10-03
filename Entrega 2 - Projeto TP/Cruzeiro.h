@@ -3,17 +3,17 @@
 
 class Cruzeiro:public Produto{
     private:
-        int TaxaFixaDeDistancia;
+        int TaxaFixaDeDistancia = 5.00;
 
         int Cabine;
         int PacoteLuaDeMel;
 
         int Distancia_Cruzeiro;
 
-        int maritimo_Salvador[2]{1747, 2738};//Porto de Santos, porto Rio Grande
+        int maritimo_Salvador[2]={9036, 4949};
 
     public:
-        Cruzeiro(string, string, int, int, int, int, int);
+        Cruzeiro(int, int, int, int, int, int, int, int, int, int, int, int);
 
         void set_Cabine(int);
         void set_PacoteLuaDeMel(int);
@@ -26,6 +26,8 @@ class Cruzeiro:public Produto{
 
         void Calcula_TempoDeViagemCruzeiro();
         void Calcula_PrecoDaPassagemCruzeio(int);
+
+        void ImprimePassagemCruzeiro();
 
 
 };

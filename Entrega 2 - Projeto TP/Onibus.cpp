@@ -1,7 +1,9 @@
 #include "Onibus.h"
 
-Onibus::Onibus(string Data_de_ida, string Data_de_volta, int TipoDeViagem, int origem, int destino, int escolha)
-    :Produto(Data_de_ida, Data_de_volta, TipoDeViagem, origem, destino){
+Onibus::Onibus(int dia_de_ida, int mes_de_ida, int ano_de_ida, int dia_de_volta, int mes_de_volta,
+                 int ano_de_volta, int TipoDeViagem, int origem, int destino, int turno, int escolha)
+    :Produto(dia_de_ida, mes_de_ida, ano_de_ida, dia_de_volta, mes_de_volta,
+            ano_de_volta, TipoDeViagem, origem, destino, turno){
 
     Define_Distancia_Onibus(origem, destino);
     Calcula_TempoDeViagemOnibus();
@@ -35,8 +37,8 @@ int Onibus::Retorna_Distancia_Onibus(){
 
 void Onibus::Calcula_TempoDeViagemOnibus(){
     int horas, minutos;
-    horas=(Retorna_Distancia_Onibus()/80);
-    minutos=(horas-(Retorna_Distancia_Onibus()/80))*100;
+    horas=(Retorna_Distancia_Onibus()/80.00);
+    minutos=(horas-(Retorna_Distancia_Onibus()/80.00))*60;
 
     Define_TempoDeViagem(to_string(horas)+" hr(s) e "+to_string(minutos)+" min(s)");
 }
@@ -54,10 +56,10 @@ void Onibus::Calcula_PrecoDaPassagemOnibus(int escolha){
     Define_PrecoDaPassagem(calc_do_preco);
 }
 
-void Onibus::ImprimirPassagemOnibus(){
+void Onibus::ImprimePassagemOnibus(){
     ImprimirDadosDaViagem();
     cout<<"\nDistância à ser percorrida: "<<Retorna_Distancia_Onibus()
         <<"\nDuração média da viagem: "<<Retorna_TempoDeViagem()
-        <<"\nPreco da passagem: R$ "<<Retorna_PrecoDaPassagem();
+        <<"\nPreco da passagem: R$ "<<Retorna_PrecoDaPassagem()<<endl;
 }
 
