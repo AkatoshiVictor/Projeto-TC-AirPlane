@@ -4,8 +4,8 @@
 class Onibus:public Produto{
     private:
 
-        int TaxaEconomica_Onibus = 0.25;
-        int TaxaExecutiva_Onibus = 0.50;
+        float TaxaEconomica_Onibus = 0.25;
+        float TaxaExecutiva_Onibus = 0.50;
 
         bool seguro;
         string bagagem;

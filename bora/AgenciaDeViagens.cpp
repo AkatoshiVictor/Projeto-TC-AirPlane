@@ -287,7 +287,7 @@ void AgenciaDeViagens::DemiteFuncionario(){
 
     RetornaPosicaoFuncionario();
 
-    if (posicao_atual!=-1){
+    if (posicao_atual>-1){
             ExibirFuncionario();
             while(1){
                 cout << "\nDeseja confimar a demissão desse funcionário? (s/n)" << endl;
@@ -360,7 +360,7 @@ void AgenciaDeViagens::ExibirFuncionario(){
         cout << "\nTelefone: " << Funcionario[posicao_atual].get_telefone();
         cout << "\nTelefone do familiar: " << Funcionario[posicao_atual].get_telefone_familiar();
         cout << "\nDocumento: " << Funcionario[posicao_atual].get_documento();
-        cout << "\nClasse: " << Funcionario[posicao_atual].get_classe_do_funcionario();
+        //cout << "\nClasse: " << Funcionario[posicao_atual].get_classe_do_funcionario(); Só o gerente tem acesso!
         cout << "\nSalário: \n" << Funcionario[posicao_atual].get_salario() << endl;
     }
 }
@@ -714,7 +714,7 @@ void AgenciaDeViagens::AlterarDadosCliente(int a){
 bool AgenciaDeViagens::VerificaDisponibilidadeDeEmailFuncionario(string email){
 
 
-        for (unsigned i = 0; i<Funcionario.size(); i++){
+        for (int i = 0; i<Funcionario.size(); i++){
 
             if (Funcionario[i].get_email() == email)
                 return false;

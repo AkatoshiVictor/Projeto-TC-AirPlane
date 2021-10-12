@@ -1,9 +1,9 @@
 #include "Onibus.h"
 
-Onibus::Onibus(string TipoDeViagem, string Origem, string Destino, string Tempo, string TagPassagem, 
+Onibus::Onibus(string TipoDeViagem, string Origem, string Destino, string Tempo, string TagPassagem,
 float Preco, int Distancia, int DiaI, int MesI, int AnoI, int DiaV, int MesV, int AnoV, int Hora):Produto(TipoDeViagem, Origem, Destino,
  Tempo, TagPassagem, Preco, DiaI, MesI, AnoI, DiaV, MesV, AnoV, Hora){
-    
+
     set_distancia(Distancia);
 
 }
@@ -46,7 +46,7 @@ int Onibus::Retorna_Distancia_Onibus(){
 void Onibus::Calcula_TempoDeViagemOnibus(){
     int horas, minutos;
     horas=(Retorna_Distancia_Onibus()/80.00);
-    minutos=(horas-(Retorna_Distancia_Onibus()/80.00))*60;
+    minutos=((Retorna_Distancia_Onibus()/80.00)-horas)*60;
 
     Define_TempoDeViagem(to_string(horas)+" hr(s) e "+to_string(minutos)+" min(s)");
 }
