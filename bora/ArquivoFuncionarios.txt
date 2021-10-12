@@ -1,0 +1,23 @@
+2
+Funcionario
+Teste
+
+A      a a a
+aaa
+
+A   Rua dos funcionarios 142
+aaa
+aaa
+aaa
+2500
+bbbb
+bbbb
+
+A      b b b 
+bbbb
+
+A      b b b b
+bbbbb
+bbbb
+bbbb
+4500
